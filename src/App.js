@@ -1,16 +1,18 @@
+import './App.css'
+import { Navbar } from "./frontend/components";
 
 
 
 
 
 function App() {
+   
     return (
-
-        <div>
-            tihs is not working
-            <img src="/assets/notesylogo.png" alt="no img"/>
-           
-        </div>
+        <>
+        <Navbar/>
+        </>
+        
+    
     );
 }
 
