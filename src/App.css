@@ -1,51 +1,125 @@
-.App {
-  text-align: center;
+@import url("https://neonui.netlify.app/css/main.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  background-color: var(--color-background);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.dark-theme {
+  --color-background: #222831;
+  --color-background-accent: #353638;
+
+  --color-foreground: #ffffff;
+  --color-foreground-accent: #f0f0ed;
 }
 
-.App-link {
-  color: #61dafb;
+.light-theme {
+  --color-background: #ffffff;
+  --color-background-accent: #f0f0ed;
+
+  --color-foreground: #222831;
+  --color-foreground-accent: #353638;
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+
+
+
+
+
+@media screen and (max-width: 40em){
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video ,
+button{
+  font-size:95%;
 }
 
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
 }
