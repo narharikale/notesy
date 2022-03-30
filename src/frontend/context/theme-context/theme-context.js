@@ -11,7 +11,7 @@ function ThemeProvider( {children} ) {
 
     useLayoutEffect(() => {
     
-         if(theme == 'light'){
+         if(theme === 'light'){
              document.documentElement.classList.remove("dark-theme");
              document.documentElement.classList.add("light-theme");
          }
@@ -23,7 +23,7 @@ function ThemeProvider( {children} ) {
      }, [theme])
  
      function themeToggle () {
-         setTheme( (theme) => (theme==='light') ? 'dark' : 'light')
+         setTheme( (theme) => (theme ==='light') ? 'dark' : 'light')
      }
  
     
