@@ -21,10 +21,10 @@ function Sidebar() {
         <div className="sidebar-container sidebarDisplay">
                 { sidebarList.map( (item,index) => {
                     return (
-                        <a key={index} className='sidebar-link'>    
+                        <div key={index} className='sidebar-link'>    
                             <span className="material-icons-outlined" >{item.iconName}</span>
                             <h4> {item.title} </h4>
-                        </a>
+                        </div>
                     )
                 })}
         </div>
@@ -33,10 +33,10 @@ function Sidebar() {
            ( <div className="sidebar-container">
                 { sidebarList.map( (item,index) => {
                     return (
-                        <a key={index} className='sidebar-link'>    
+                        <div key={index} className='sidebar-link'>    
                             <span className="material-icons-outlined" >{item.iconName}</span>
                             <h4> {item.title} </h4>
-                        </a>
+                        </div>
                     )
                 })}
             </div>) : null
