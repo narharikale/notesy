@@ -45,3 +45,9 @@
         display: flex;
     }
 }
+
+@media  screen and (min-width: 64.063em) and (max-width: 90em) {
+    .sidebarDisplay{
+        display: flex;
+    }
+}
