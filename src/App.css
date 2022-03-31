@@ -1,5 +1,10 @@
 @import url("https://neonui.netlify.app/css/main.css");
 
+:root{
+  --color-background-primary : #58d65f ;
+  --color-background-accent-primary : #84ff637d ;
+}
+
 * {
   margin: 0;
   padding: 0;

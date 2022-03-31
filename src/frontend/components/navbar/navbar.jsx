@@ -1,25 +1,24 @@
 
-import { useTheme } from '../../context';
-import './navbar.css'
+import { useTheme , } from '../../context';
+import './navbar.css';
 
 function Navbar() {
 
-    const { themeToggle , theme } = useTheme()
+    const { themeToggle , theme, setMenu ,menu} = useTheme();
     
     return ( 
     
         <nav className="header header-container">
-            <div className='d-flex'>
-                <div>
-                <button className="icon-btn"><span className="material-icons">menu</span> </button>
+            <div className='d-flex gap-1'>
+                <div className='icon-btn-container'>
+                <button className="icon-btn" onClick={ () => setMenu(!menu) } ><span className="material-icons">menu</span> </button>
                     
                 </div>
-                <div className='d-flex align-center'>
+                <div className='d-flex align-center gap-1'>
                     <img  className='header-logo' src="/assets/notesylogo.png" alt="logo" />
-                    <h3 className='m-0'>Notesy</h3>
+                    <h2 className='m-0'>Notesy</h2>
                 </div>
                 
-
             </div>
             <div className='d-flex searchbar-container'>
                 <div className='searchbar'>
