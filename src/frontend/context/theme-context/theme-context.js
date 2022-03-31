@@ -7,7 +7,9 @@ const themeContext = createContext(null);
 
 
 function ThemeProvider( {children} ) {
-    const [theme , setTheme] = useState('light')
+    const [theme , setTheme] = useState('light');
+    const [menu , setMenu] = useState(false) ;
+
 
     useLayoutEffect(() => {
     
@@ -29,7 +31,7 @@ function ThemeProvider( {children} ) {
     
 
     return ( 
-        <themeContext.Provider value={{ themeToggle , theme }}>
+        <themeContext.Provider value={{ themeToggle , theme , menu , setMenu }}>
             {children}
         </themeContext.Provider>
      );

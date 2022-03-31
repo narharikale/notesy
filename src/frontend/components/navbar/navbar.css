@@ -23,6 +23,8 @@
     height: 2.5rem;
     max-inline-size: none;
 }
+
+
 .icon-btn{
     border-radius: 50%;
     border: 0;
@@ -39,6 +41,11 @@
     color: var(--color-foreground-accent);
     background-color: var(--color-background-accent);
 }
+
+.icon-btn-container{
+    display: none;
+}
+
 .notesy-btn{
     display: inline-block;
     text-align: center;
@@ -103,7 +110,12 @@
 
 
 @media screen and (max-width: 40em){
-
+    .icon-btn-container{
+        display: flex;
+    }
+    .header-container{
+        font-size: 1.3rem;
+    }
 
 }
 

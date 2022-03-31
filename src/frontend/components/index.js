@@ -1,2 +1,3 @@
 
-export { Navbar } from './navbar/navbar.jsx'
+export { Navbar } from './navbar/navbar';
+export { Sidebar } from './sidebar/sidebar';
