@@ -1,13 +1,14 @@
-import './App.css'
+import './App.css';
 import { Navbar } from "./frontend/components";
-import { Home } from './frontend/screens';
+import { Routers } from './frontend/router/router';
+
 
 function App() {
    
     return (
         <>
         <Navbar/>
-        <Home/>
+        <Routers/>
         </>
         
     
