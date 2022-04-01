@@ -46,6 +46,6 @@ const useTheme = () => {
     }
   
     return context;
-  };
+};
 
 export { ThemeProvider  , useTheme };
