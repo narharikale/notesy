@@ -6,7 +6,7 @@ function Navbar() {
   const { themeToggle, theme, setMenu, menu } = useTheme();
   const { isAuthorized, setAuthorized } = useAuth();
 
-  function logoutHandler() {
+  function signOutHandler() {
     localStorage.removeItem("AuthToken");
     setAuthorized({ authtoken: "", status: false });
   }
@@ -58,10 +58,10 @@ function Navbar() {
         </button>
         {isAuthorized.status ? (
           <button
-            onClick={() => logoutHandler()}
+            onClick={() => signOutHandler()}
             className="notesy-btn notesy-secondary-btn"
           >
-            Logout
+            Sign out
           </button>
         ) : (
           <>
