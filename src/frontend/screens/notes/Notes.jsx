@@ -1,4 +1,4 @@
-import { Sidebar } from '../../components';
+import { Sidebar, TextEditor } from '../../components';
 import './Notes.css';
 
 
@@ -9,7 +9,11 @@ function Notes() {
     
         <div className="main-container" >
             <Sidebar/>
-            <div className="main-screen" > this is main screen</div>
+            <div className="main-screen"> 
+            
+                <TextEditor/>
+            
+             </div>
         </div>
      );
 }
