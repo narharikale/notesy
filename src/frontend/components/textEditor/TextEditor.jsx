@@ -30,7 +30,7 @@ function TextEditor() {
             <div>
                 <input type="text" placeholder='Title' className='text-editor-title font-size-md' />
             </div>
-            <ReactQuill modules={modules} onChange={ setValue }  theme="snow" placeholder='Take a note...' />
+            <ReactQuill modules={modules} onChange={ setValue } value={ value } theme="snow" placeholder='Take a note...' />
             <div className='d-flex justify-between'>
               <div className='btn-container p-relative'>
                   <button className='icon-btn material-icons-outlined' onClick={ () => setIsTrue({ ...isTrue , palette:!isTrue.palette }) } >palette</button>
