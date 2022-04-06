@@ -31,6 +31,18 @@ function ArchiveProvider( { children }) {
         }
     }
 
+    const deleteArchive = async(id) =>  {
+        try {
+            const { data } = await axios.delete( `/api/archives/delete/${id}` , {
+                headers:{
+                    authorization : isAuthorized.authtoken
+                }
+            } )
+            setArchiveData(data.archives)         
+        } catch (error) {
+            console.error(error)
+        }
+    }
     
 
     const restoreArchive = async(id , note) =>  {
@@ -71,7 +83,7 @@ function ArchiveProvider( { children }) {
 
 
    return ( 
-        <ArchiveContext.Provider value={{ postArchive , archiveData , restoreArchive }}>
+        <ArchiveContext.Provider value={{ postArchive , archiveData , restoreArchive , setArchiveData , deleteArchive }}>
             { children }
         </ArchiveContext.Provider>
      );

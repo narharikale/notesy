@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 function NoteCard({ note }) {
   const { isAuthorized } = useAuth();
   const { setNotesData } = useNotes();
-  const { postArchive, restoreArchive } = useArchive();
+  const { postArchive, restoreArchive , deleteArchive} = useArchive();
   const { _id, title, desc, color, priority, tags } = note;
 
   const { pathname } = useLocation();
@@ -19,12 +19,13 @@ function NoteCard({ note }) {
     const foreverDelete = async(id) =>  {
      
         try {
-            const { data } = await axios.delete( `/api/notes/${id}` , {
+            const response = await axios.delete( `/api/notes/${id}` , {
                 headers:{
                     authorization : isAuthorized.authtoken
                 }
             } )
-            setNotesData(data.notes)    
+            setNotesData(response.data.notes) 
+            console.log(response)
             
         } catch (error) {
             console.error(error)
@@ -84,14 +85,14 @@ return (
            : null
           )}
        
-            { note.isInTrash ? <button  className="icon-btn material-icons-outlined" onClick={() => updateNote( { ...note , isInTrash:false })}>
+            { pathname === '/trash' ? <button  className="icon-btn material-icons-outlined" onClick={() => updateNote( { ...note , isInTrash:false })}>
                 restore_from_trash
-                </button> : <button className="icon-btn material-icons-outlined" onClick= { () => updateNote( { ...note , isInTrash:true }) }> delete </button>
+                </button> : pathname === '/archive' ? (<button className="icon-btn material-icons-outlined" onClick= { () => deleteArchive(_id) }> delete_forever </button>) : (<button className="icon-btn material-icons-outlined" onClick= { () => updateNote( { ...note , isInTrash:true }) }> delete </button>)
             }
 
             { pathname === '/trash' &&  <button  className="icon-btn material-icons-outlined" onClick={() => foreverDelete(_id, note)}>
                 delete_forever
-                </button> 
+                </button>
             }
         </div>
       </div>
