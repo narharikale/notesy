@@ -6,3 +6,7 @@
 .main-screen{
     flex-grow: 1;
 }
+
+.m-16{
+    margin: 16rem;
+}
