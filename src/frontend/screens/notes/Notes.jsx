@@ -1,4 +1,5 @@
 import { NoteCard, Sidebar, TextEditor } from '../../components';
+import { Modal } from '../../components/modal/Modal';
 import { useNotes } from '../../context';
 import './Notes.css';
 
@@ -16,6 +17,7 @@ function Notes() {
             <div className="main-screen"> 
                 <TextEditor/>
                 <div className='note-card-container'>
+                    
                     { notesData &&  notesData.map((note) => {
                         return (
                             !note.isInTrash && <NoteCard key={note._id} note={note}/> 

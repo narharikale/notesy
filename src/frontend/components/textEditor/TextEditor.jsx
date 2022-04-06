@@ -28,7 +28,7 @@ function TextEditor() {
   return (
     <div className="main-textEditor">
       <div className="text-editor-container d-flex gap-1 flex-column">
-        <div>
+        <div> 
           <input
             type="text"
             placeholder="Title"
