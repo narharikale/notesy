@@ -25,7 +25,7 @@ function ArchiveProvider( { children }) {
             } )
             setArchiveData(data.archives)
             setNotesData(data.notes)
-            console.log(data)
+           
         } catch (error) {
             console.error(error)
         }
@@ -42,7 +42,7 @@ function ArchiveProvider( { children }) {
             } )
             setArchiveData(data.archives)
             setNotesData(data.notes)
-            console.log(data)
+           
         } catch (error) {
             console.error(error)
         }
