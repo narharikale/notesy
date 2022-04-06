@@ -14,6 +14,7 @@
     align-items: center;
     border-radius: 0rem 0.938rem 0.938rem 0rem;
     color: var(--color-foreground);
+    cursor: pointer;
 }
 
 .sidebar-link:hover{
