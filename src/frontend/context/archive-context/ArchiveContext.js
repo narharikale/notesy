@@ -66,7 +66,7 @@ function ArchiveProvider( { children }) {
             setArchiveData([])
         }
        
-    }, []);
+    }, [isAuthorized]);
     
 
 

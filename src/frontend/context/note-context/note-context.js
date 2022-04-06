@@ -46,7 +46,7 @@ function NoteProvider( { children } ) {
             setNotesData([]);
         }
        
-    }, []);
+    }, [isAuthorized]);
     
 
   
