@@ -25,7 +25,7 @@ function NoteCard({ note }) {
                 }
             } )
             setNotesData(data.notes)    
-            console.log(data)
+            
         } catch (error) {
             console.error(error)
         }
@@ -61,8 +61,8 @@ return (
       <div>
         {tags.map((tag, index) => (
           <div key={index} className="badge-text">
-            {" "}
-            {tag}{" "}
+           
+            {tag}
           </div>
         ))}
       </div>
