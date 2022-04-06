@@ -32,7 +32,13 @@ textarea {
 
   --color-foreground: #ffffff;
   --color-foreground-accent: #f0f0ed;
+
+  --color-note-first : #2b7d30;
+  --color-note-second :#a33452;
+  --color-note-third : #816728; 
+
 }
+
 
 .light-theme {
   --color-background: #ffffff;
@@ -40,6 +46,10 @@ textarea {
 
   --color-foreground: #222831;
   --color-foreground-accent: #353638;
+
+  --color-note-first : #70dc76;
+  --color-note-second :#ed5e84;
+  --color-note-third : #feca4d; 
 }
 
 

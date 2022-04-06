@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import { useTheme } from '../../context';
 import './sidebar.css'
 
 
 const sidebarList= [ 
-    {title:'Notes' , iconName:'sticky_note_2'},
-    {title:'Archives' , iconName:'archive'},
-    {title:'Labels' , iconName:'label'},
-    {title:'Trash' , iconName:'delete'}
+    {title:'Notes' , path:'notes', iconName:'sticky_note_2'},
+    {title:'Archives',path:'archive' , iconName:'archive'},
+    {title:'Labels' ,path:'notes' , iconName:'label'},
+    {title:'Trash', path:'trash' , iconName:'delete'}
 ] 
 
 
@@ -21,10 +22,10 @@ function Sidebar() {
         <div className="sidebar-container sidebarDisplay">
                 { sidebarList.map( (item,index) => {
                     return (
-                        <div key={index} className='sidebar-link'>    
-                            <span className="material-icons-outlined" >{item.iconName}</span>
+                        <Link key={index} className='sidebar-link' to={`/${item.path}`} >    
+                            <span className="material-icons-outlined"  >{item.iconName}</span>
                             <h4> {item.title} </h4>
-                        </div>
+                        </Link>
                     )
                 })}
         </div>
@@ -33,10 +34,10 @@ function Sidebar() {
            ( <div className="sidebar-container">
                 { sidebarList.map( (item,index) => {
                     return (
-                        <div key={index} className='sidebar-link'>    
-                            <span className="material-icons-outlined" >{item.iconName}</span>
+                        <Link key={index} className='sidebar-link' to={`/${item.path}`} >    
+                            <span className="material-icons-outlined"  >{item.iconName}</span>
                             <h4> {item.title} </h4>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>) : null
