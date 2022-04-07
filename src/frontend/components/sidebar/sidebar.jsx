@@ -6,7 +6,7 @@ import './sidebar.css'
 const sidebarList= [ 
     {title:'Notes' , path:'notes', iconName:'sticky_note_2'},
     {title:'Archives',path:'archive' , iconName:'archive'},
-    {title:'Labels' ,path:'notes' , iconName:'label'},
+    {title:'Labels' ,path:'label' , iconName:'label'},
     {title:'Trash', path:'trash' , iconName:'delete'}
 ] 
 
