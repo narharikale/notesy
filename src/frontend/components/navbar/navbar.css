@@ -117,8 +117,8 @@
     top: 2rem;
     right: 0rem;
     display: flex;
+    flex-direction: column;
     padding: 10px;
-    justify-content: space-between;
 }
 
 .priority-label{
