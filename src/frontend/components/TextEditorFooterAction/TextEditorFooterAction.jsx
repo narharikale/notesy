@@ -23,6 +23,7 @@ function TextEditorFooterAction({note , setNote}) {
 
   return (
     <>
+      
       <button
         className="icon-btn material-icons-outlined p-relative"
         title="Select colors"
@@ -61,22 +62,17 @@ function TextEditorFooterAction({note , setNote}) {
             placeholder="label name"
             onChange={(e) => setNewTag(e.target.value)}
           />
+          <div className="d-flex" >
           <button
             className="notesy-btn notesy-primary-btn font-size-sm"
-            onClick={() => setNote({ ...note, tags: [...tags, newTag] })}
+            onClick={() => {
+              setIsTrue({ ...isTrue, label: !isTrue.label })
+              return setNote({ ...note, tags: [...tags, newTag] 
+            })}}
           >
             Add
           </button>
-
-          {tags.map((tag) => {
-            return (
-              <div key={tag}>
-                <label htmlFor={tag}>
-                  <input type="checkbox" id={tag} /> {tag}
-                </label>
-              </div>
-            );
-          })}
+        
           <button
             className="icon-btn material-icons-outlined font-size-sm"
             title="Remove"
@@ -84,6 +80,8 @@ function TextEditorFooterAction({note , setNote}) {
           >
             clear
           </button>
+          </div>
+         
         </div>
       ) : null}
 

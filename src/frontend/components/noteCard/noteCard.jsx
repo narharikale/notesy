@@ -58,7 +58,7 @@ function NoteCard({ note }) {
       ) : null}
 
       <div className={`note-card ${color} `}>
-        {priority && <div class="badge-text">{priority}</div>}
+        {priority && <div className="badge-priority">{priority}</div>}
         <div className="note-card-header">
           <div className="note-title"> {title} </div>
           {/* <button className="icon-btn material-icons-outlined"> push_pin </button> */}
@@ -68,73 +68,82 @@ function NoteCard({ note }) {
           className="note-card-desc p-1"
           dangerouslySetInnerHTML={{ __html: desc }}
         />
-        <div>
-          {tags.map((tag, index) => (
-            <div key={index} className="badge-text">
-              {tag}
-            </div>
-          ))}
+
+          <div>
+          <div className="tag-container">
+          {tags &&
+           tags.map((tag , index) => (
+              <div className="badge-text  d-flex align-center" key={index}>
+                {tag}
+                <span className="material-icons icon-btn cursor-pointer font-size-regular"  onClick ={ ()=>  updateNote({ ...note , tags:tags.filter( (newtag) => newtag !== tag  )  }) } >
+                    clear
+                </span>
+              </div>
+            ))}
         </div>
-        <div className="note-card-footer">
-          <div className="btn-container p-relative">
-            {pathname === "/archive" || pathname === "/trash" ? null : (
-              <TextEditorFooterAction
-                note={note}
-                setNote={(note) => updateNote(note)}
-              />
-            )}
+           
 
-            <button
-              className="icon-btn material-icons-outlined"
-              title="Edit Note"
-              onClick={() => setNoteModal(!noteModal)}
-            >
-              edit
-            </button>
-
-            {pathname === "/archive" ? (
-              <button
-                className="icon-btn material-icons-outlined"
-                onClick={() => restoreArchive(_id, note)}
-              >
-                unarchive
-              </button>
-            ) : pathname !== "/trash" ? (
-              <button
-                className="icon-btn material-icons-outlined"
-                onClick={() => postArchive(_id, note)}
-              >
-                archive
-              </button>
-            ) : null}
-
-            {note.isInTrash ? (
-              <button
-                className="icon-btn material-icons-outlined"
-                onClick={() => updateNote({ ...note, isInTrash: false })}
-              >
-                restore_from_trash
-              </button>
-            ) : (
-              <button
-                className="icon-btn material-icons-outlined"
-                onClick={() => updateNote({ ...note, isInTrash: true })}
-              >
-                {" "}
-                delete{" "}
-              </button>
-            )}
-
-            {pathname === "/trash" && (
-              <button
-                className="icon-btn material-icons-outlined"
-                onClick={() => foreverDelete(_id, note)}
-              >
-                delete_forever
-              </button>
-            )}
           </div>
-        </div>
+          <div className="note-card-footer">
+            <div className="btn-container p-relative">
+              {pathname === "/archive" || pathname === "/trash" ? null : (
+                <TextEditorFooterAction
+                  note={note}
+                  setNote={(note) => updateNote(note)}
+                />
+              )}
+
+              <button
+                className="icon-btn material-icons-outlined"
+                title="Edit Note"
+                onClick={() => setNoteModal(!noteModal)}
+              >
+                edit
+              </button>
+
+              {pathname === "/archive" ? (
+                <button
+                  className="icon-btn material-icons-outlined"
+                  onClick={() => restoreArchive(_id, note)}
+                >
+                  unarchive
+                </button>
+              ) : pathname !== "/trash" ? (
+                <button
+                  className="icon-btn material-icons-outlined"
+                  onClick={() => postArchive(_id, note)}
+                >
+                  archive
+                </button>
+              ) : null}
+
+              {note.isInTrash ? (
+                <button
+                  className="icon-btn material-icons-outlined"
+                  onClick={() => updateNote({ ...note, isInTrash: false })}
+                >
+                  restore_from_trash
+                </button>
+              ) : (
+                <button
+                  className="icon-btn material-icons-outlined"
+                  onClick={() => updateNote({ ...note, isInTrash: true })}
+                >
+                  {" "}
+                  delete{" "}
+                </button>
+              )}
+
+              {pathname === "/trash" && (
+                <button
+                  className="icon-btn material-icons-outlined"
+                  onClick={() => foreverDelete(_id, note)}
+                >
+                  delete_forever
+                </button>
+              )}
+            </div>
+          </div>
       </div>
     </div>
   );

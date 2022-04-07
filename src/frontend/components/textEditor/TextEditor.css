@@ -97,3 +97,7 @@
     margin-left: 5px;
 }
 
+.badge-text .icon-btn {
+    width: 15px;
+    height: 15px;
+}
