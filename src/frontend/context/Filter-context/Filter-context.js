@@ -1,6 +1,4 @@
-import { createContext, useContext , useEffect } from "react";
-import { useAuth } from "../auth-context/auth-context";
-import axios from 'axios';
+import { createContext, useContext} from "react";
 import { useReducer } from "react";
 
 const FilterContext = createContext();

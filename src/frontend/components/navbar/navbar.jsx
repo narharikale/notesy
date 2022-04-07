@@ -1,6 +1,6 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
-import { useAuth, useFilter, useNotes, useTheme } from "../../context";
+import { useAuth, useFilter, useTheme } from "../../context";
 import { useState } from "react";
 
 function Navbar() {
