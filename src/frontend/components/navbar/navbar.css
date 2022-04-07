@@ -109,6 +109,28 @@
     flex-grow: 1;
 }
 
+.filter-container{
+    width: 16rem;
+    background: var(--color-background-accent);
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    position: absolute;
+    top: 2rem;
+    right: 0rem;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.priority-label{
+    display: flex;
+    width: fit-content;
+    padding: 5px;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
 
 @media screen and (max-width: 40em){
     .icon-btn-container{

@@ -47,3 +47,36 @@
 .color-note-third{
     background-color:  var(--color-note-third);
 }
+
+.badge-text{
+    border: 2px solid var(--color-foreground);
+    background-color: var(--color-foreground-accent);
+    color: var(--color-background-accent);
+    align-items: center;
+    gap: 2px;
+}
+.badge-text .icon-btn {
+    color: var(--color-background-accent);
+}
+
+.badge-text .icon-btn:hover {
+    color: var(--color-foreground-accent);
+}
+.badge-text-container{
+    display: flex;
+    gap: 8px;
+}
+
+.tag-container{
+    display: flex;
+    height: 2.5rem;
+    gap: 10px;
+    align-items: center;
+}
+
+.badge-priority{
+    display: inline-block;
+    border: 2px solid var(--color-foreground-accent);
+    padding: 4px ;
+    border-radius: 5px;
+}

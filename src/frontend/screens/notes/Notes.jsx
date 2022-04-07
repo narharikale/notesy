@@ -16,6 +16,7 @@ function Notes() {
             <div className="main-screen"> 
                 <TextEditor/>
                 <div className='note-card-container'>
+                    
                     { notesData &&  notesData.map((note) => {
                         return (
                             !note.isInTrash && <NoteCard key={note._id} note={note}/> 

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { AuthProvider, ThemeProvider , NoteProvider, ArchiveProvider} from "./frontend/context";
+import { AuthProvider, ThemeProvider , NoteProvider, ArchiveProvider , FilterProvider} from "./frontend/context";
 import { BrowserRouter } from 'react-router-dom'
 
 
@@ -17,7 +17,9 @@ ReactDOM.render(
         <ThemeProvider>
           <NoteProvider>
             <ArchiveProvider>
-              <App />
+              <FilterProvider>
+                <App />
+              </FilterProvider>
             </ArchiveProvider>
           </NoteProvider>
         </ThemeProvider>
