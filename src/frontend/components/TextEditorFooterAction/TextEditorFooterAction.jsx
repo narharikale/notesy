@@ -85,6 +85,7 @@ function TextEditorFooterAction({note , setNote}) {
         </div>
       ) : null}
 
+      <div>
       <button
         className="icon-btn material-icons-outlined"
         title="Set Priority"
@@ -110,6 +111,8 @@ function TextEditorFooterAction({note , setNote}) {
           })}
         </div>
       ) : null}
+      </div>
+     
     </>
   );
 }
