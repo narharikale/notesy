@@ -1,5 +1,4 @@
 import { NoteCard, Sidebar, TextEditor } from '../../components';
-import { Modal } from '../../components/modal/Modal';
 import { useNotes } from '../../context';
 import './Notes.css';
 

@@ -10,7 +10,7 @@ import { useState } from "react";
 function NoteCard({ note }) {
   const { isAuthorized } = useAuth();
   const { setNotesData } = useNotes();
-  const { postArchive, restoreArchive , deleteArchive} = useArchive();
+  const { postArchive, restoreArchive} = useArchive();
   const { _id, title, desc, color, priority, tags } = note;
   const [noteModal, setNoteModal] = useState(false);
 
