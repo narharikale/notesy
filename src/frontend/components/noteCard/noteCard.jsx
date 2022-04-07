@@ -10,12 +10,11 @@ import { useState } from "react";
 function NoteCard({ note }) {
   const { isAuthorized } = useAuth();
   const { setNotesData } = useNotes();
-  const { postArchive, restoreArchive } = useArchive();
+  const { postArchive, restoreArchive , deleteArchive} = useArchive();
   const { _id, title, desc, color, priority, tags } = note;
   const [noteModal, setNoteModal] = useState(false);
 
   const { pathname } = useLocation();
-
   const foreverDelete = async (id) => {
     try {
       const { data } = await axios.delete(`/api/notes/${id}`, {
@@ -82,7 +81,6 @@ function NoteCard({ note }) {
             ))}
         </div>
            
-
           </div>
           <div className="note-card-footer">
             <div className="btn-container p-relative">
@@ -100,7 +98,6 @@ function NoteCard({ note }) {
               >
                 edit
               </button>
-
               {pathname === "/archive" ? (
                 <button
                   className="icon-btn material-icons-outlined"
