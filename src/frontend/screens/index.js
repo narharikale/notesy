@@ -5,3 +5,4 @@ export { Archive } from './archive/Archive.jsx';
 export { Trash } from './trash/Trash';
 export { Notes } from './notes/Notes';
 export { Filter } from './filterScreen/FilterScreen';
+export { Label } from './Label/Label';

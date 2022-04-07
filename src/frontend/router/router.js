@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes , } from "react-router-dom";
-import { Home , Archive ,  SignIn, SignUp , Trash , Notes ,Filter } from '../screens'
+import { Home , Archive ,  SignIn, SignUp , Trash , Notes ,Filter , Label } from '../screens'
 import { PrivateRoute } from "../components";
 import Mockman from 'mockman-js';
 import { useAuth } from "../context";
@@ -42,6 +42,14 @@ function Routers() {
           element={
             <PrivateRoute>
               <Filter />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/label"
+          element={
+            <PrivateRoute>
+              <Label/>
             </PrivateRoute>
           }
         />
