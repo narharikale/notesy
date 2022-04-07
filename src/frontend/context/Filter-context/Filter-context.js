@@ -11,9 +11,16 @@ function FilterProvider( { children } ) {
         switch (action.type) {
             case "FILTER_BY_PRIORITY":
                 return { ...state , FilterByPriority:action.payload }
-                
+
+            case "SORT_BY_DATE":
+                return { ...state , SortByDate:action.payload }
+         
             case "CLEAR" :
-                return { ...state , FilterByPriority:null }
+                return { ...state ,
+                    FilterByPriority:null,
+                    SortByDate:null
+                    }
+            
             default:
                 return { ...state } ;
         }
@@ -21,7 +28,8 @@ function FilterProvider( { children } ) {
     
 
     const intitialState = {
-        FilterByPriority :'high',
+        FilterByPriority :null,
+        SortByDate:null
     } 
    
 

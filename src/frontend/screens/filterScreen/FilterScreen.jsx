@@ -18,19 +18,36 @@ function Filter() {
             return data.filter( (note) => note.priority ==="Low"  )
         }
         return data ;
+    }   
     
-    }    
+    function sortByDate(state , data) {
+        if(state.SortByDate && state.SortByDate ==='oldest'){
+            return [...data].sort(
+                
+                 (a, b) => {
+                     console.log(a, b ,"a-b") 
+                     return Date.parse(a.createdAt) - Date.parse(b.createdAt)
+                    })
+        }
+        if(state.SortByDate && state.SortByDate ==='newest'){
+            return [...data].sort(
+                (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)
+               )
+        }
+        return data
+    }  
 
     const { notesData } = useNotes();
     const { filterState }  = useFilter()
     const filteredData =  filterByPriority(filterState , notesData )
-
+    const finalData = sortByDate( filterState, filteredData )
+    console.log(finalData , "final")
     return ( 
         <div className="main-container">
             <Sidebar/>
             <div className="main-screen">
                 <div className="note-card-container">
-                    { filteredData && filteredData.map( (note, index) => {
+                    { finalData && finalData.map( (note, index) => {
                         return (
                             <NoteCard note={note} key={index} />
                         )

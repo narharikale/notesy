@@ -11,7 +11,7 @@ function NoteCard({ note }) {
   const { isAuthorized } = useAuth();
   const { setNotesData } = useNotes();
   const { postArchive, restoreArchive} = useArchive();
-  const { _id, title, desc, color, priority, tags } = note;
+  const { _id, title, desc, color, priority, tags , createdAt } = note;
   const [noteModal, setNoteModal] = useState(false);
 
   const { pathname } = useLocation();
@@ -81,6 +81,9 @@ function NoteCard({ note }) {
             ))}
         </div>
            
+          </div>
+          <div>
+          { createdAt }
           </div>
           <div className="note-card-footer">
             <div className="btn-container p-relative">
