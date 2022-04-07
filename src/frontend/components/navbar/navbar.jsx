@@ -20,6 +20,7 @@ function Navbar() {
   return (
     <nav className="header header-container">
       <div className="d-flex gap-1">
+        
         <div className="icon-btn-container">
           {isAuthorized.status ? (
             <button className="icon-btn" onClick={() => setMenu(!menu)}>
