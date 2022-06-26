@@ -1,5 +1,5 @@
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useFilter, useTheme } from "../../context";
 import { useState } from "react";
 
@@ -7,8 +7,9 @@ function Navbar() {
   const { themeToggle, theme, setMenu, menu } = useTheme();
   const { isAuthorized, setAuthorized } = useAuth();
   const [ showFilter , setShowFilter ] = useState(false);
+  const navigate = useNavigate();
 
-  const { filterState ,  filterDispatch } = useFilter();
+  const { filterState ,  filterDispatch , setSearchQuery } = useFilter();
   const { FilterByPriority  , SortByDate } = filterState
 
   function signOutHandler() {
@@ -44,7 +45,9 @@ function Navbar() {
             <button className="d-flex">
               <span className="material-icons">search</span>{" "}
             </button>
-            <input type="text" />
+            <input type="text" onFocus={()=> navigate('/search')}
+              onChange={(e)=> setSearchQuery(e.target.value)}
+              />
             <div className="d-flex p-relative">
               <Link to='/filter' role='button' className="material-icons" onClick={ () => setShowFilter(!showFilter) } >tune</Link>
               { showFilter &&

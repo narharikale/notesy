@@ -46,7 +46,7 @@ function NoteCard({ note }) {
   };
 
   return (
-    <div>
+    <div className="height-fit-content">
       {noteModal ? (
         <Modal
           noteModal={noteModal}
@@ -56,7 +56,7 @@ function NoteCard({ note }) {
         />
       ) : null}
 
-      <div className={`note-card ${color} `}>
+      <div className={`note-card ${color}`}>
         {priority && <div className="badge-priority">{priority}</div>}
         <div className="note-card-header">
           <div className="note-title"> {title} </div>
@@ -104,6 +104,7 @@ function NoteCard({ note }) {
               {pathname === "/archive" ? (
                 <button
                   className="icon-btn material-icons-outlined"
+                  title="Un-Archive"
                   onClick={() => restoreArchive(_id, note)}
                 >
                   unarchive
@@ -111,6 +112,7 @@ function NoteCard({ note }) {
               ) : pathname !== "/trash" ? (
                 <button
                   className="icon-btn material-icons-outlined"
+                  title="Archive"
                   onClick={() => postArchive(_id, note)}
                 >
                   archive
@@ -120,6 +122,7 @@ function NoteCard({ note }) {
               {note.isInTrash ? (
                 <button
                   className="icon-btn material-icons-outlined"
+                  title="Restore"
                   onClick={() => updateNote({ ...note, isInTrash: false })}
                 >
                   restore_from_trash
@@ -127,6 +130,7 @@ function NoteCard({ note }) {
               ) : (
                 <button
                   className="icon-btn material-icons-outlined"
+                  title="Trash"
                   onClick={() => updateNote({ ...note, isInTrash: true })}
                 >
                   {" "}
@@ -137,6 +141,7 @@ function NoteCard({ note }) {
               {pathname === "/trash" && (
                 <button
                   className="icon-btn material-icons-outlined"
+                  title="Delete"
                   onClick={() => foreverDelete(_id, note)}
                 >
                   delete_forever

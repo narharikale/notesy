@@ -1,4 +1,6 @@
 @import url("https://neonui.netlify.app/css/main.css");
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 
 :root{
   --color-background-primary : #58d65f ;
@@ -14,6 +16,7 @@
 
 body {
   background-color: var(--color-background);
+  font-family: 'Varela Round', sans-serif !important;
 }
 
 button,

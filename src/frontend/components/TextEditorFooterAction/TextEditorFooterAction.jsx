@@ -49,7 +49,7 @@ function TextEditorFooterAction({note , setNote}) {
 
       <button
         className="icon-btn material-icons-outlined"
-        title="Tag"
+        title="Select Label"
         onClick={() => setIsTrue({ ...isTrue, label: !isTrue.label })}
       >
         label

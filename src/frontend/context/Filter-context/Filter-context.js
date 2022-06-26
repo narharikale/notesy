@@ -1,4 +1,4 @@
-import { createContext, useContext} from "react";
+import { createContext, useContext, useState} from "react";
 import { useReducer } from "react";
 
 const FilterContext = createContext();
@@ -34,14 +34,14 @@ function FilterProvider( { children } ) {
    
 
     const [filterState , filterDispatch] = useReducer(filterReducer , intitialState );
-   
+    const [searchQuery , setSearchQuery] = useState("");
   
     
     return ( 
-        <FilterContext.Provider value={{ filterState , filterDispatch} }>
+        <FilterContext.Provider value={{ filterState , filterDispatch ,searchQuery , setSearchQuery} }>
             { children }
         </FilterContext.Provider>
-     );
+    );
 }
 
 const useFilter = () => useContext(FilterContext);

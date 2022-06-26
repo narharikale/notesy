@@ -17,7 +17,6 @@ function Label() {
     return notesData.filter((note) => note.tags.includes(tag));
   }
 
-
   return (
     <div className="main-container">
       <Sidebar />
@@ -34,10 +33,16 @@ function Label() {
           ))}
         </div>
         <div className="note-card-container">
-          {newdata &&
+          {newdata?.length > 0  ? (
             newdata.map((note) => {
               return <NoteCard key={note._id} note={note} />;
-            })}
+            })
+          ) : (
+            <div className="d-flex gap-1">
+              <div className="material-icons-outlined">label</div>
+              <div> No labels yet </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes , } from "react-router-dom";
-import { Home , Archive ,  SignIn, SignUp , Trash , Notes ,Filter , Label } from '../screens'
+import { Home , Archive ,  SignIn, SignUp , Trash , Notes ,Filter , Label, Search } from '../screens'
 import { PrivateRoute } from "../components";
 import Mockman from 'mockman-js';
 import { useAuth } from "../context";
@@ -26,6 +26,14 @@ function Routers() {
           element={
             <PrivateRoute>
               <Archive />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <PrivateRoute>
+              <Search />
             </PrivateRoute>
           }
         />
